@@ -1,8 +1,17 @@
-* {
-    margin:0;
-    padding:0;
+@font-face {
+    src: url(../PressStart2P-Regular.ttf);
+    font-family: dos;
 }
-
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: dos;
+    text-decoration: none;
+}
+body{
+    background-color: rgb(11, 12, 41);
+}
 
 footer {
     position: absolute;
