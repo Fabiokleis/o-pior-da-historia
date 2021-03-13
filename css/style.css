@@ -17,6 +17,17 @@ nav{
     padding: 5px;
     height:50px;
 }
+.o{
+    display:inline-block;
+    color:whitesmoke;
+    text-shadow: 3px 2px 2px rgba(8, 26, 180, 0.952);
+    padding: 4px 6px 4px 6px;
+    background-color: rgb(130, 93, 144);
+    border-radius: 2px;
+    transform:translateY(50%);
+    margin-left:5px;
+}
+
 footer {
     position: absolute;
     bottom: 0px;
