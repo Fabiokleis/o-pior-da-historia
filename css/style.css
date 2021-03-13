@@ -6,3 +6,15 @@ footer {
     border-top: solid 6px rgba(66, 8, 199, 0.986);
     box-sizing: border-box;
 }
+#yt {
+    list-style-image: url(../img/youtube_logox40.png);
+}
+#tw {
+    list-style-image: url(../img/twitch_logox40.png);
+}
+#spt {
+    list-style-image: url(../img/spotify_logox40.png);
+}
+#tt {
+    list-style-image: url(../img/twitter_logox40.png);
+}
