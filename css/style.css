@@ -26,6 +26,10 @@ nav{
     border-radius: 2px;
     margin-left:5px;
 }
+#juggernaut {
+    float: right;
+    margin-right: 10px;
+}
 
 footer {
     position: absolute;
