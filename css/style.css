@@ -25,6 +25,8 @@ nav{
     background-color: rgb(130, 93, 144);
     border-radius: 2px;
     margin-left:5px;
+    transform:translateY(50%);
+
 }
 #juggernaut {
     float: right;
