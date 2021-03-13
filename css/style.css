@@ -17,19 +17,27 @@ nav{
     padding: 5px;
     height:50px;
 }
-.mob_link {
+
+#mobile {
+    display:none;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding:10px;
+}
+#mob_juggernaut {
     display:none;
 }
-@media screen and(max-width:450px){
-    nav #mob {
-    color:white;
-    padding:14px 16px;
-    display:block;
-    background-color:black;
-    position:absolute;
-    left:0;
-    top:0;
-
+.m {
+    display:none;
+    color:whitesmoke;
+        text-shadow: 3px 2px 2px rgba(8, 26, 180, 0.952);
+        padding: 4px 6px 4px 6px;
+}
+@media screen and (max-width:450px){
+    #link{
+        display:none;
+    }
+    #mob_juggernaut {
+        display:block;
     }
 }
 .o{
