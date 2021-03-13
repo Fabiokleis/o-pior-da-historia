@@ -6,6 +6,22 @@ footer {
     border-top: solid 6px rgba(66, 8, 199, 0.986);
     box-sizing: border-box;
 }
+#log {
+    list-style-position: inside;
+    padding-top: 10px;
+    padding-bottom:90px;
+}
+.red {
+    color: whitesmoke;
+    text-shadow: 3px 2px 2px mediumblue;
+    font-size: 12px;
+    float:left;
+    padding-left: 10px;
+}
+.red:hover {
+    color:rgb(166, 1, 195)
+}
+
 #yt {
     list-style-image: url(../img/youtube_logox40.png);
 }
