@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +11,21 @@
 </head>
 <body>
     <nav>
-        <ul id="link">
+        <ul class="link">
             <a rel="next" href="#"><li class="o">Home</li></a>
             <a rel="next" href="#"><li class="o">Podcasts</li></a>
             <a rel="next" href="#"><li class="o">About</li></a>
             <a rel="author" href="#"><img src="./img/mac.png" id="juggernaut"></a>
         </ul>
+        <a href="javascript:void(0);"id="mob" onclik="nav_mobile()">
+            <ul class="mob_link">
+                <a rel="next" href="#"><li class="m">Home</li></a>
+                <a rel="next" href="#"><li class="m">Podcasts</li></a>
+                <a rel="next" href="#"><li class="m">Contact</li></a>
+                <a rel="next" href="#"><li class="m">About</li></a>
+                <a rel="author" href="#"><img src="./img/mac.png" id="juggernaut"></a>
+            </ul>
+        </a>
     </nav>
 
 
@@ -26,7 +35,8 @@
             <a rel="external" href=""><li id="tw" class="red">Twitch</li></a>
             <a rel="external"href="https://open.spotify.com/show/0F2b2136dXBhLsoACuNatu?si=0jyM2kEZTZ-dNLNz2TeRWQ&nd=1"><li id="spt" class="red">Spotify</li></a>
             <a rel="external"href="https://twitter.com/PiorHistoria?s=09"><li id="tt" class="red">Twitter</li></a>
-        </ul>    
+        </ul>
+        <p id="termos">License</p>
     </footer>
 
 </body>
