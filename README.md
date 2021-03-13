@@ -1,3 +1,3 @@
 # o-pior-da-historia
-Podcast o pior da históra
+Podcast o pior da históra,
 Aplicação web de streaming do pequeno podcast do meu irmão...
