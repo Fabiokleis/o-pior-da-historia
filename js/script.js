@@ -71,28 +71,35 @@ function remove_slider(){
     slider_.textContent = "";
 }
 function thisVolume(volume_value) { 
+    let vol = document.getElementById("vol");
     let audio_ = document.getElementById("first");
     document.getElementById("volume-control").innerHTML=volume_value; 
-    audio_.volume = volume_value / 100; 
+    console.log(volume_value);
+    audio_.volume = volume_value / 100;
+    if(audio_.volume == 0){
+        vol.setAttribute("src", "./img/mutado.png");
+        vol.style.width ="53px";
+        vol.style.height ="30px"
+    }else{
+        vol.setAttribute("src", "./img/som.png");
+        vol.style.width ="28px";
+        vol.style.height ="28px"
+    }
 }
 
 function prox_img(ola){
+    let curr = document.getElementById("current_track");
+    let card_curr = document.getElementsByClassName("card");
     let imag = document.getElementById("home");    
-    if(!ola.dataset.num){
-        ola.setAttribute("data-num",1);
-        imag.setAttribute("src",img_array[1]);    
-    }else{
-        let a = imag.getAttribute("src");
-        
-        if(a != img_array[img_array.length-1]){
-            let pp = parseInt(ola.dataset.num);
-            console.log(img_array[pp]);
-            pp++;
-            ola.dataset.num = pp;
-            imag.setAttribute("src",img_array[parseInt(ola.dataset.num)]);   
-        }
-    }
+    let num = parseInt(ola.getAttribute("data-num"));
+    console.log(card_curr[num]);
+    curr.innerHTML = card_curr[num];
+    
+    console.log(num);
+    imag.setAttribute("src",img_array[num]);    
+    
 }
+
 function ant_img(){
     let imag = document.getElementById("home");    
     let ola = document.getElementById("prox");
@@ -110,7 +117,8 @@ function ant_img(){
 
 let playlist = document.getElementById("playlist");
 for(k = 0; k <= img_array.length; k++){
-    playlist.innerHTML += "<div class='card'></div>";
+    playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
+    playlist.children[k].setAttribute("data-num", k);
     playlist.children[k].innerHTML += "<img class='icon'><p class='text'>ola mundo</p>";
 }
 let j;
