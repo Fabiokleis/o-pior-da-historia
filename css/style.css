@@ -193,7 +193,13 @@ nav{
     box-shadow: 2px 0px 2px blue;
     border-radius:2px;
 }
-
+#home_ {
+    display:block;
+    width:500px;
+    height:420px;
+    box-shadow: 2px 0px 2px blue;
+    border-radius:2px;
+}
 #controls {
     display:inline-block;
     height: 100%;
@@ -265,7 +271,14 @@ nav{
         border-radius:25%;
     }
     #controls{
+        
         margin-bottom: 10px;
+    }
+
+    #home_{
+        width:100%;
+        height:90%;
+        
     }
     #wel{
         position:absolute;
