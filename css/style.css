@@ -157,7 +157,7 @@ nav{
 #mobile {
     display:none;
     position:absolute;
-    top:60px;
+    top:45px;
     left:0;
     width:100%;
 }
@@ -208,7 +208,7 @@ nav{
     text-align: left;
     box-sizing: border-box;
     background-color:rgb(76, 0, 255);
-    box-shadow: 2px 2px 2px rgba(165, 221, 246, 0.582);
+    box-shadow: 2px 2px 2px blue;
 }
 #playlist {
     display:inline-block;
@@ -233,10 +233,78 @@ nav{
     text-align:center;
     margin-top:15px;
 }
-@media screen and (max-width:700px){
 
+#sobre{
+    text-align: start;
+    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+    width:350px;
+    padding:20px;
+    box-shadow: 3px 3px 3px mediumblue;
+    display:inline-block;
+    margin-top:50px;
+}
+#sobre:hover{
+    background-image: linear-gradient(rgb(152, 1, 253),rgba(66, 82, 223, 0.952));
+}
+#jojo{
+    color:whitesmoke;
+    font-size: 1em;   
+}
+
+#main{
+    
+    text-align:center;
+}
+#contact{
+    display:inline-block;
+    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+    padding:20px;
+    margin-top:20px;
+    box-shadow:3px 3px 3px mediumblue;
+    width:70%;
+}
+#contact:hover{
+    background-image: linear-gradient(rgb(152, 1, 253),rgba(66, 82, 223, 0.952));
+}
+#logi{
+    display:inline-block;
+    list-style-position: inside;
+    width:0;
+}
+h1{
+    color:whitesmoke;
+    font-size: 1.5em;
+}
+.redi{
+    text-align:left;
+    color:whitesmoke;
+    padding:10px;
+    text-shadow: 2px 2px 2px blue;
+    
+    width:fit-content;
+}
+.redi:hover{
+    color:mediumorchid;
+}
+@media screen and (max-width:700px){
+    nav {
+        height:45px;
+    }
     footer{
         display:none;
+    }
+    #contact{
+        width:90vw;
+    }
+    .redi{
+        font-size:0.7em;
+    }
+    #sobre{
+        width:90vw;
+        margin-top:20px;
+    }
+    #jojo{
+        font-size:0.7em;
     }
     #home {
         display:none;
@@ -249,14 +317,13 @@ nav{
         position:absolute;
         top:0;
         left:0;
+        width:42px;
+        height:45px;
+        padding:2px
         
-        padding:4px;
     }
     #mob_juggernaut:hover {
         background-color:rgb(76, 0, 255);
-        
-        padding-left:4px;
-        padding-right:4px;
         
     }
     #nav_{
@@ -341,6 +408,7 @@ footer {
     font-size:15px;
     color: whitesmoke;
     padding:5px;
+    display:inline-block;
 }
 #termos:hover {
     cursor:pointer;

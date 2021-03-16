@@ -100,26 +100,29 @@ function prox_img(ola){
 }
 
 let playlist = document.getElementById("playlist");
-for(k = 0; k < img_array.length; k++){
-    playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
-    playlist.children[k].setAttribute("data-num", k);
-    playlist.children[k].innerHTML += "<img class='icon'><p class='text'>ola mundo</p>";
-}
-let j;
-for(j = 0; j < img_array.length; j++){
-    console.log(playlist.children[j].firstChild.setAttribute("src",img_array[j]));
+if(playlist){
+
+    for(k = 0; k < img_array.length; k++){
+        playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
+        playlist.children[k].setAttribute("data-num", k);
+        playlist.children[k].innerHTML += "<img class='icon'><p class='text'>ola mundo</p>";
+    }
+    let j;
+    for(j = 0; j < img_array.length; j++){
+        console.log(playlist.children[j].firstChild.setAttribute("src",img_array[j]));
+    }
 }
 
 
 // audio input sync
-
+if(audio){
 audio.addEventListener("loadedmetadata", () => {
 
     max_time.innerText = calculate_time(audio.duration);
     setSliderMax();
 
 });
-
+}
 function calculate_time(sec){
     let minut = Math.floor(sec/60);
     let second = Math.floor(sec%60);
@@ -134,26 +137,27 @@ function showRangeProgress(rangeInput){
         timer.style.setProperty('--seek-before-width', rangeInput.value / range.rangeInput.max *100 +"%")
     }
 }
+if(slider){
+    slider.addEventListener('input', () => {
+        timer.innerText = calculate_time(slider.value);
+        
+        if(!audio.paused){
+            cancelAnimationFrame(rAF);
+        }
+    });
 
-slider.addEventListener('input', () => {
-    timer.innerText = calculate_time(slider.value);
-    
-    if(!audio.paused){
-        cancelAnimationFrame(rAF);
-    }
-});
 
+    slider.addEventListener('change', () => {
+        audio.currentTime = slider.value;
+        if(!audio.paused){
+            requestAnimationFrame(whilePlaying)
+        }
+    });
 
-slider.addEventListener('change', () => {
-    audio.currentTime = slider.value;
-    if(!audio.paused){
-        requestAnimationFrame(whilePlaying)
-    }
-});
-
-slider.addEventListener('timeupdate',() => {
-    slider.value = Math.floor(audio.currentTime);
-});
+    slider.addEventListener('timeupdate',() => {
+        slider.value = Math.floor(audio.currentTime);
+    });
+}
 let rAF = null;
 const whilePlaying = () => {
     slider.value = Math.floor(audio.currentTime);
