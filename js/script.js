@@ -85,6 +85,12 @@ function thisVolume(volume_value) {
     }
 }
 
+let date = new Date();
+let today = date.getDate();
+let mouth = date.getDay();
+let year = date.getFullYear();
+let current_date = `${today} ${mouth} ${year}`;
+let current_time = calculate_time(Math.floor(audio.duration));
 function prox_img(ola){
     let curr = document.getElementById("current_track");
     let card_curr = document.getElementById("playlist");
@@ -93,19 +99,20 @@ function prox_img(ola){
     let audio_ = document.getElementById("first");
     let player = document.getElementById("player");
     curr.children[0].innerHTML = card_curr.children[num].innerHTML;
+    slider.value = 0;
     player.setAttribute("src", "./control/play.png");
     
     audio_.setAttribute("src", track_array[num]);
     imag.setAttribute("src",img_array[num]);    
 }
-
 let playlist = document.getElementById("playlist");
 if(playlist){
 
     for(k = 0; k < img_array.length; k++){
         playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
         playlist.children[k].setAttribute("data-num", k);
-        playlist.children[k].innerHTML += "<img class='icon'><p class='text'>ola mundo</p>";
+        playlist.children[k].innerHTML += "<img class='icon'><p class='text'>"+current_date+"</p>";
+        playlist.children[k].innerHTML += "<p class='title'>Episode title</p>";
     }
     let j;
     for(j = 0; j < img_array.length; j++){
@@ -133,8 +140,8 @@ function setSliderMax(){
     slider.max = Math.floor(audio.duration);
 }
 function showRangeProgress(rangeInput){
-    if(rangeInput == slider){
-        timer.style.setProperty('--seek-before-width', rangeInput.value / range.rangeInput.max *100 +"%")
+    if(rangeInput === slider.innerHTML){
+        timer.style.setProperty('--seek-before-width', rangeInput.value / range.rangeInput.max * 100 +"%")
     }
 }
 if(slider){
@@ -145,7 +152,10 @@ if(slider){
             cancelAnimationFrame(rAF);
         }
     });
-
+    slider.addEventListener('input', (e) => {
+        
+        showRangeProgress(e.target);
+    });
 
     slider.addEventListener('change', () => {
         audio.currentTime = slider.value;

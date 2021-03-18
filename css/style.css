@@ -73,23 +73,26 @@ nav{
     height: 10px;
     border-radius: 2px;
 }
-#slider_ {
-    display:inline-block;
-}
+
 #timer{
     position:relative;
-    
+    width:100%;
     text-align: left;
     bottom:42px;
     --seek-before-width:0%;
     --buffered-width:0%;
     height:20px;
+    
 }
 #timer::before{
     position:absolute;
     width:calc(100%+4px);
     height:calc(100%+4px);
     background-image: linear-gradient(rgba(153, 0, 255, 0.863),rgba(8, 26, 180, 0.952));
+    z-index: -1;
+}
+#slider_ {
+    display:inline-block;
 }
 #current-time{
     color:whitesmoke;
@@ -113,14 +116,25 @@ nav{
     background-color:transparent;
     
 }
-#seek-slider::-webkit-slider-runnable-track{
-    background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
+input[type="range"]::-webkit-slider-runnable-track{
+    width:100%;
+    background: linear-gradient(rgba(12, 30, 192, 0.952) var(--buffered-width), rgba(185, 136, 218, 0.863) var(--buffered-width));
     cursor: pointer;
     height: 20px;
     border-radius: 3px;
+    
 }
-#seek-slider::before{
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background: #007db5;
+}
+input[type="range"]::before{
+    position:absolute;
+    left:0;
+    content: "";
     width: var(--seek-before-width);
+    height: 20px;
+    background-color:#007db5;
 }
 #seek-slider::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -449,9 +463,12 @@ footer {
     position:relative;
     text-align: left;
     display:block;
-    background-color:rgb(76, 0, 255);
+    
+    background-color: #0a0c5a63;
     width:100%;
-    border-bottom:solid  3px black;
+    border-bottom:solid  2px rgb(76, 0, 255);
+    border-left:solid 2px rgb(76, 0, 255);
+    border-radius: 3px;
     
 }
 .icon {
@@ -474,26 +491,37 @@ footer {
     height:100%;
     
     display:inline-block;
-    background-color: #0059ff63;
-    border:solid 3px black;
+    background-color:rgb(67, 16, 185);
+    
+    border:solid 3px rgb(66, 0, 219);
+    border-radius: 3px;
 }
 .text{
     display:inline;
     font-size: 10px;
-    position: relative;
-    bottom:20px;
-    left:5px;
+    position: absolute;
+    bottom:40px;
     padding: 2px;
     color:whitesmoke;
     text-shadow: 3px 2px 2px purple;
     
-    width: 100%;
+    width: fit-content;
 
 }
-.text:hover {
+.title:hover {
     color:rgb(217, 21, 251);
 }
-
+.title{
+    display:inline;
+    font-size: 10px;
+    position: relative;
+    left:5px;
+    bottom:10px;
+    color:whitesmoke;
+    text-shadow: 3px 2px 2px purple;
+    text-align:left;
+    
+}
 
 /* scroll style */
 
@@ -501,7 +529,7 @@ footer {
     background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
     scrollbar-width:17px;
     border-radius: 3px;
-    box-shadow: 3px 3px 3px 3px black;
+    box-shadow: 1px 1px 1px 1px black;
 }
 #playlist::-webkit-scrollbar-thumb{
     background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
