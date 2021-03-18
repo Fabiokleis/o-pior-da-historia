@@ -139,11 +139,7 @@ function calculate_time(sec){
 function setSliderMax(){
     slider.max = Math.floor(audio.duration);
 }
-function showRangeProgress(rangeInput){
-    if(rangeInput === slider.innerHTML){
-        timer.style.setProperty('--seek-before-width', rangeInput.value / range.rangeInput.max * 100 +"%")
-    }
-}
+
 if(slider){
     slider.addEventListener('input', () => {
         timer.innerText = calculate_time(slider.value);
@@ -152,10 +148,7 @@ if(slider){
             cancelAnimationFrame(rAF);
         }
     });
-    slider.addEventListener('input', (e) => {
-        
-        showRangeProgress(e.target);
-    });
+    
 
     slider.addEventListener('change', () => {
         audio.currentTime = slider.value;
