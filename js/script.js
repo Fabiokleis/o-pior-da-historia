@@ -12,28 +12,42 @@ function nav_mobile(flp){
     let mob = document.getElementById("mobile");
     let nav = document.getElementsByTagName("nav")[0];
     let cont = document.getElementById("container");
-
+    let cont2 = document.getElementsByClassName("container");
     if(mob.style.display == ""){
-        mob.style.display = "block";
+        mob.style.display = "flex";
+        mob.style.flexFlow = "column";
         flp.src = "../img/menu_mobile_flipped.png";
         flp.style.height = "36px";
         flp.style.width = "46px";
         flp.style.marginRight ="-5px";
         nav.style.borderBottom = "solid 5px rgb(47, 33, 126)";
-        cont.style.marginTop = "150px";
+        if(cont){
+            
+            cont.style.marginTop = "150px";
+        
+        }
+        if(cont2[0]){
+            cont2[0].style.marginTop = "150px";
+        }
         for(let j of link){
             if(j.style.display == ""){
-                j.style.display ="block";
+                j.style.display ="flex";
             }
         }
-    }else if(mob.style.display == "block"){
+    }else if(mob.style.display == "flex"){
         mob.style.display = "";
         nav.style.borderBottom = "none";
         flp.src = "../img/menu_mobile.png"
         flp.style.height = "44px";
         flp.style.width = "40px";
         flp.style.marginRight ="0";
-        cont.style.marginTop = "40px";
+        if(cont){
+            cont.style.marginTop = "40px";
+        }
+        
+        if(cont2[0]){
+            cont2[0].style.marginTop = "40px";
+        }
     }
     
 }
