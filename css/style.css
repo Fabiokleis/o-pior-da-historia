@@ -200,9 +200,8 @@ input[type="range"]::-webkit-slider-runnable-track{
     background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
 }
 #home {
-    display:block;
-    width:500px;
-    height:420px;
+    width:450px;
+    height:370px;
     box-shadow: 2px 0px 2px blue;
     border-radius:2px;
 }
@@ -214,7 +213,6 @@ input[type="range"]::-webkit-slider-runnable-track{
     border-radius:2px;
 }
 #controls {
-    display:inline-block;
     height: 100%;
     width:100%;
     padding:5px;
@@ -229,6 +227,7 @@ input[type="range"]::-webkit-slider-runnable-track{
     width:100%;
     border-radius:5px;
     overflow-y: auto;
+    overflow-x:hidden;
 }
 
 #wrapper{
@@ -303,14 +302,14 @@ h1{
 .redi:hover{
     color:mediumorchid;
 }
+
 @media screen and (max-width:700px){
     nav {
         height:45px;
     }
     footer{
-        display:none;
-        width:0%;
-        height: 0%;
+        visibility: hidden;
+        
     }
     #contact{
         width:90vw;
@@ -371,7 +370,8 @@ h1{
         display:block;
         width:95%;
         top:110%;
-        left:2%;
+        margin-left:2%;
+        margin-right:2%;
     }
     #wrapper{
         width:95%;
@@ -400,8 +400,8 @@ h1{
 }
 
 footer {
-    position:fixed;
-    bottom:0;
+    position:absolute;
+    top:95%;
     width: 100%;
     background-image: linear-gradient(rgba(72, 90, 146, 0.65), rgba(140, 11, 226, 0.828));
     box-sizing: border-box;
