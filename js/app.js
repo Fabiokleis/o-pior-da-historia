@@ -12,11 +12,13 @@ firebase.initializeApp(firebaseConfig);
 
 
 const data = firebase.storage();
+const db = firebase.firestore();
 
 const thumbs_list = data.ref("/thumbs/");
 const tracks_list = data.ref("/tracks/");
 const thumbs_array = [];
 const tracks_array = [];
+const titles_array = [];
 
 function read_thumbs() {
     return new Promise((reso, rej) => {
@@ -61,5 +63,24 @@ function read_tracks() {
                     });
                 });
             }).catch(err => { console.log(err); document.write("Houve um erro!");});
+    })
+}
+
+function read_titles() {
+    return new Promise((reso, rej) => {
+        db.collection("tracks_informations").doc("titles_obj")
+        .get()
+        .then(snap => {
+            const titles_ = snap.data();
+            const temp = [];
+            if(titles_array.length < 19){
+                temp.push(Object.values(titles_));
+                temp[0].forEach(title => {for(j=0; j < title.length; j++){titles_array.push(title[j])}})
+            }
+
+            if(titles_array.length === 19){
+                reso();
+            }
+        }).catch(err => { document.write("Houve um erro inesperado!"); console.log(err); rej()})
     })
 }

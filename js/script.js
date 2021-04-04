@@ -116,13 +116,16 @@ async function prox_img(ola){
 
 
 async function write_cards(){
-    await read_thumbs();
-    if(playlist){
+    if(thumbs_array.length < 19 && titles_array.length < 19){
+        await read_thumbs();
+        await read_titles();
+    }
+    if(playlist.innerHTML.length < 5684){
         for(k = 0; k < thumbs_array.length; k++){
             playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
             playlist.children[k].setAttribute("data-num", k);
-            playlist.children[k].innerHTML += "<img class='icon'><p class='text'></p>";
-            playlist.children[k].innerHTML += "<p class='title'>Episode title</p>";
+            playlist.children[k].innerHTML += "<img class='icon'>";
+            playlist.children[k].innerHTML += "<p class='title'>"+titles_array[k]+"</p>";
         }
         let j;
         for(j = 0; j < thumbs_array.length; j++){
