@@ -55,10 +55,7 @@ async function prox_img(ola){
     let imag = document.getElementById("home");    
     let num = parseInt(ola.getAttribute("data-num"));
     let audio_ = document.getElementById("first");
-    
     curr.children[0].innerHTML = card_curr.children[num].innerHTML;
-    
-    
     imag.setAttribute("src",thumbs_array[num]);    
     await read_tracks();
     audio_.setAttribute("src", tracks_array[num]);
@@ -75,7 +72,7 @@ async function write_cards(){
             playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
             playlist.children[k].setAttribute("data-num", k);
             playlist.children[k].innerHTML += "<img class='icon'>";
-            playlist.children[k].innerHTML += "<p class='title'>current track: "+titles_array[k]+"</p>";
+            playlist.children[k].innerHTML += "<p class='title'>"+titles_array[k]+"</p>";
         }
         let j;
         for(j = 0; j < thumbs_array.length; j++){
