@@ -80,5 +80,6 @@ async function write_cards(){
         }
     }
 }
-
-write_cards();
+if(playlist){
+    write_cards();
+}
