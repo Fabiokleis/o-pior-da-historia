@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/temp.css">
     <link rel="shortcut icon" href="./img/icon.png">
     
     <title>O pior da história</title>
@@ -30,23 +30,11 @@
     <div id="container">
         <div id="wel">
             <img id="home" src="./img/opior_da_historia.jpg" alt="o pior da historia"> 
-            <div id="timer">
-                <span id="current-time" class="time">0:00</span><span id="max_time" class="time">0:00</span>
-                <input type="range" id="seek-slider" max="100" value="0">
-            </div>
-             <audio id="first" preload="metadata">
+           
+             <audio id="first" preload="metadata" controls>
                 <source  src="./tracks/1ep.mp3" type="audio/mp3">
                     
             </audio> 
-            <div id="controls">
-                
-                <img src="./control/play.png" class="controles" id="player" onclick="pause_audio()"  alt="player">
-                <img src="./control/som.png" class="controles" id="vol" onclick="mute_audio()" alt="volume">
-                <div id="slider_">
-                    <input type='range' oninput="thisVolume(this.value)"onchange="thisVolume(this.value)" min="0" max="100" id='volume-control'>
-                </div>
-                
-            </div>
         </div>
         <div id="wrapper">
             <div id="current_track">

@@ -12,7 +12,8 @@
 }
 body{
     background-color: rgb(19, 20, 44);
-    overflow-y: hidde;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 a{
     display:inline;
@@ -27,126 +28,6 @@ nav{
     height:61px;
 }
 
-
-#volume-control {
-    appearance: none;
-    height: 15px;
-    position:relative;
-    bottom:3px;
-    left:-6%;
-    transform: translateY(-25%);
-    outline: none;
-    background: transparent;
-    
-}
-#volume-control::-ms-track{
-    background-color: blue;
-    border-color:transparent;
-    color:transparent;
-    cursor:pointer;
-}
-#volume-control::-webkit-slider-runnable-track{
-    background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
-    box-shadow:1px 1px 1px black;
-    background-color: transparent;
-    border-radius: 2px;
-    height:10px;
-    width:150px;
-}
-#volume-control::-webkit-slider-thumb{
-    appearance: none;
-    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
-    box-shadow:1px 1px 1px black;
-    border-radius: 2px;
-    width:12px;
-    height:24px;
-    margin-top:-7px;
-}
-#volume-control::-moz-range-thumb{
-    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
-    border-radius: 2px;
-    width:12px;
-    height:24px;
-    box-shadow:1px 1px 1px black;
-    border:none;
-
-}
-#volume-control::-moz-range-track{
-    box-shadow:1px 1px 1px black;
-    background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
-    height: 10px;
-    border-radius: 2px;
-}
-
-#timer{
-    position:relative;
-    width:100%;
-    text-align: left;
-    bottom:42px;
-    --buffered-width:0%;
-    height:20px;
-    
-}
-#slider_ {
-    display:inline-block;
-}
-#current-time{
-    color:whitesmoke;
-    position:relative;
-    float:left;
-    padding:5px;
-    font-size:13px;
-}
-#max_time{
-    color:whitesmoke;
-    position:relative;
-    float:right;
-    padding:5px;
-    font-size:13px;
-}
-#seek-slider{
-    -webkit-appearance: none;
-    display:block;
-    outline:none;
-    background-color:transparent;
-    width:100%;
-}
-
-input[type="range"]::-webkit-slider-runnable-track{
-    
-    background: linear-gradient(rgba(12, 30, 192, 0.952) var(--buffered-width), rgba(185, 136, 218, 0.863) var(--buffered-width));
-    cursor: pointer;
-    height: 20px;
-    border-radius: 3px;
-}
-#seek-slider::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
-    box-shadow: 2px 2px 2px black;
-    width:12px;
-    height:24px;
-    border-radius: 2px;
-    margin-top: -2px;
-}
-
-#seek-slider::-moz-range-thumb{
-    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
-    box-shadow: 2px 2px 2px black;
-    width:12px;
-    height:24px;
-    border-radius: 2px;
-    margin-top: -2px;
-}
-#seek-slider::-moz-range-track{
-    background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
-    cursor: pointer;
-    height: 20px;
-    border-radius: 3px;
-}
-
-#vol {
-    margin-left:-10px;
-}
 
 #link {
     display:flex;
@@ -191,7 +72,6 @@ input[type="range"]::-webkit-slider-runnable-track{
     top:0;
     left:0;
 }
-
 #nav_{
     display:none;
     /*rgba(72, 90, 146, 0.65)*/
@@ -211,15 +91,6 @@ input[type="range"]::-webkit-slider-runnable-track{
     height:420px;
     box-shadow: 2px 0px 2px blue;
     border-radius:2px;
-}
-#controls {
-    height: 100%;
-    width:100%;
-    padding:5px;
-    text-align: left;
-    box-sizing: border-box;
-    background-color: #0a0c5a63;
-    box-shadow: 2px 2px 2px blue;
 }
 #playlist {
     display:inline-block;
@@ -355,10 +226,7 @@ h1{
         padding:2px;
         border-radius:25%;
     }
-    #controls{
-        width:100%;
-        margin-bottom: 10px;
-    }
+    
 
     #home_{
         width:100%;
@@ -453,7 +321,6 @@ footer {
 }
 
 
-
 .card {
     position:relative;
     text-align: left;
@@ -520,16 +387,3 @@ footer {
     
 }
 
-/* scroll style */
-
-#playlist::-webkit-scrollbar {
-    background-image: linear-gradient(rgba(185, 136, 218, 0.863),rgba(83, 91, 167, 0.952));
-    scrollbar-width:17px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px black;
-}
-#playlist::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
-    width:20px;
-    box-shadow: 1px 1px 1px 1px black;
-}

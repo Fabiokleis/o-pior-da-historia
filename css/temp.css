@@ -1,0 +1,346 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: dos;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+@font-face {
+    src: url(../fonts/PressStart2P-Regular.ttf);
+    font-family: dos;
+}
+
+body{
+    background-color: rgb(19, 20, 44);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+nav {
+    height:45px;
+    display:block;
+    justify-content:flex-end;
+    position: relative;
+    width:100%;
+    background-image: linear-gradient(rgba(72, 90, 146, 0.65), rgba(140, 11, 226, 0.828));
+    padding: 5px;
+}
+#nav_{
+    display:inline;
+    position:absolute;
+    right:2%;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:44px;
+    padding:2px;
+    border-radius:25%;
+}
+
+
+#mobile {
+    display:none;
+    position:absolute;
+    top:45px;
+    left:0;
+    width:100%;
+}
+
+#mob_juggernaut {
+    display:inline-block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:42px;
+    height:45px;
+    padding:2px
+    
+}
+#mob_juggernaut:hover {
+    background-color:rgb(76, 0, 255);
+    
+}
+
+footer{
+    visibility: hidden;
+    
+}
+.m {
+    display:flex;
+    color:whitesmoke;
+    text-shadow: 3px 2px 2px rgba(8, 26, 180, 0.952);
+    padding:12px;
+    border-bottom:solid 5px rgb(47, 33, 126);
+    
+    background-color: rgba(0, 0, 0, 0.328);
+
+    position:relative;
+    top:0;
+    left:0;
+}
+
+.m:hover{
+    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+}
+#home {
+    display:none;
+}
+#link {
+    display:none;
+}
+
+#container {
+    position: relative;
+    display:block;
+    margin: auto;
+    margin-top:5%;
+    width:max-content;
+}
+#wel{
+    position:relative;
+    width:100%;
+    height:fit-content;
+}
+#first{
+    display:block;
+    width:100%;
+    height:30px;
+    padding: 2px;
+}
+#wrapper{
+    position: relative;
+    width:90vw;
+}
+
+#playlist {
+    display:inline-block;
+    height:90vw;
+    width:100%;
+    border-radius:5px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+#track {
+    position:relative;
+    
+    width:100%;
+    
+    
+    display:inline-block;
+    background-color:rgb(67, 16, 185);
+    
+    
+    border:groove 2px rgb(66, 0, 219);
+    border-radius: 3px;
+    
+}
+
+#track:hover{
+    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+}
+
+.card {
+    position:relative;
+    text-align: left;
+    display:block;
+    
+    background-color: #0a0c5a63;
+    width:100%;
+    border-bottom:solid  2px rgb(76, 0, 255);
+    border-left:solid 2px rgb(76, 0, 255);
+    border-radius: 3px;
+    
+}
+
+.card:hover{
+    background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+}
+.icon {
+    
+    box-shadow: 2px 2px 2px black;
+    width:70px;
+    height:70px;
+    display:inline;
+}
+
+.title{
+    display:inline;
+
+    font-size: 0.8vw;
+    
+    position: absolute;
+    top:10px;
+    left:75px;
+    color:whitesmoke;
+    text-shadow: 3px 2px 2px purple;
+    text-align:left;
+    width:auto;
+    
+}
+.title:hover {
+    color:rgb(217, 21, 251);
+}
+
+
+@media screen and (min-width:750px){
+    nav{
+        display:flex;
+        justify-content:flex-end;
+        position: relative;
+        width:100%;
+        background-image: linear-gradient(rgba(72, 90, 146, 0.65), rgba(140, 11, 226, 0.828));
+        padding: 5px;
+        height:60px;
+    }
+    #nav_{
+    display:none;
+    /*rgba(72, 90, 146, 0.65)*/
+    }
+
+    #juggernaut {
+        position:absolute;
+        left:0;
+        top:0;
+        padding:4px;
+    }
+    #juggernaut:hover{
+        background-color:rgb(76, 0, 255);
+
+    }
+
+    #link {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: -4px;
+        list-style: none;
+    }
+
+    .o{    
+        color:whitesmoke;
+        text-shadow: 3px 2px 2px rgba(8, 26, 180, 0.952);
+        padding: 4px 6px 4px 6px;
+        margin-right: 20px; 
+        background-color: #0a0c5a63;
+        border-radius: 2px;
+    }
+    .o:hover{
+        background-image: linear-gradient(rgba(140, 11, 226, 0.863),rgba(8, 26, 180, 0.952));
+    }
+    
+    #container {
+        position: relative;
+        display:flex;
+        flex-flow:row;
+        justify-content: center;
+        margin: auto;
+        margin-top:20px;
+        width:max-content;
+    }
+    #home {
+        display:block;
+        width:40vw;
+        height:30vw;
+        box-shadow: 2px 0px 2px blue;
+        border-radius:2px;
+    }
+    #wel{
+        position:relative;
+        margin-left:2%;
+        margin-right:2%;
+        width:100%;
+        height:fit-content;
+    }
+    #wrapper{
+        position: relative;
+        width:100%;
+    }
+
+    #playlist {
+        display:inline-block;
+        height:25vw;
+        width:35vw;
+        border-radius:5px;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+
+    #track {
+        position:relative;
+        
+        width:100%;
+        
+        
+        display:inline-block;
+        background-color:rgb(67, 16, 185);
+        
+        
+        border:groove 2px rgb(66, 0, 219);
+        border-radius: 3px;
+        
+    }
+
+
+    footer {
+        position:absolute;
+        top:90%;
+        width: 100%;
+        background-image: linear-gradient(rgba(72, 90, 146, 0.65), rgba(140, 11, 226, 0.828));
+        box-sizing: border-box;
+        display:flex;
+        flex-flow:column;
+        align-items: center;
+        visibility: visible;
+    }
+
+    #log {
+        list-style-position: inside;
+        display:flex;
+    }
+    .red {
+        color: whitesmoke;
+        text-shadow: 3px 2px 2px mediumblue;
+        font-size: 12px;
+        padding-left: 10px;
+    }
+    .red:hover {
+        color:rgb(166, 1, 195);
+    }
+    #yt {
+        list-style-image: url(../img/youtube_logox40.png);
+    }
+    #tw {
+        list-style-image: url(../img/twitch_logox40.png);
+    }
+    #spt {
+        list-style-image: url(../img/spotify_logox40.png);
+    }
+    #tt {
+        list-style-image: url(../img/twitter_logox40.png);
+    }
+    
+    #termos {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:15px;
+        color: whitesmoke;
+        padding:5px;
+    }
+    #termos:hover {
+        cursor:pointer;
+        color:mediumblue;
+    }
+
+    #mobile {
+        display:none;
+    }
+    #mob_juggernaut {
+        display:none;
+    }
+    .m {
+        display:none;
+        
+    }
+    
+}
+

@@ -1,8 +1,6 @@
 
 let audio = document.getElementById("first");
 let timer = document.getElementById("current-time");
-let slider = document.getElementById("seek-slider");
-let max_time = document.getElementById("max_time");
 let playlist = document.getElementById("playlist");
 
 // mobile nav bar
@@ -50,54 +48,6 @@ function nav_mobile(flp){
     }
     
 }
-function pause_audio(){
-    let player = document.getElementById("player");
-    let audio_ = document.getElementById("first");
-
-    if(audio_.paused == true){
-        player.setAttribute("src", "./control/pause.png");
-        requestAnimationFrame(whilePlaying);
-        audio_.play();
-    }else{
-        player.setAttribute("src", "./control/play.png");
-        cancelAnimationFrame(rAF);
-        audio_.pause();
-    }
-}
-function mute_audio(){
-    let audio_ = document.getElementById("first");
-    let vol = document.getElementById("vol");
-    let ip = document.getElementById("volume-control");
-    if(audio_.muted == false){
-    
-        vol.setAttribute("src", "./control/mutado.png");
-        audio_.muted = true;
-        ip.value = 0;
-        
-    }else{
-        vol.setAttribute("src", "./control/som.png");
-        
-        ip.value = 50;
-        audio_.muted = false;
-    }
-}
-
-
-function thisVolume(volume_value) { 
-    let vol = document.getElementById("vol");
-    let audio_ = document.getElementById("first");
-    document.getElementById("volume-control").innerHTML=volume_value; 
-
-    audio_.volume = volume_value / 100;
-    if(audio_.volume == 0){
-        vol.setAttribute("src", "./control/mutado.png");
-        
-    }else{
-        vol.setAttribute("src", "./control/som.png");
-        
-    }
-}
-
 
 async function prox_img(ola){
     let curr = document.getElementById("current_track");
@@ -105,10 +55,10 @@ async function prox_img(ola){
     let imag = document.getElementById("home");    
     let num = parseInt(ola.getAttribute("data-num"));
     let audio_ = document.getElementById("first");
-    let player = document.getElementById("player");
+    
     curr.children[0].innerHTML = card_curr.children[num].innerHTML;
-    slider.value = 0;
-    player.setAttribute("src", "./control/play.png");
+    
+    
     imag.setAttribute("src",thumbs_array[num]);    
     await read_tracks();
     audio_.setAttribute("src", tracks_array[num]);
@@ -125,7 +75,7 @@ async function write_cards(){
             playlist.innerHTML += "<div class='card' onclick='prox_img(this)'></div>";
             playlist.children[k].setAttribute("data-num", k);
             playlist.children[k].innerHTML += "<img class='icon'>";
-            playlist.children[k].innerHTML += "<p class='title'>"+titles_array[k]+"</p>";
+            playlist.children[k].innerHTML += "<p class='title'>current track: "+titles_array[k]+"</p>";
         }
         let j;
         for(j = 0; j < thumbs_array.length; j++){
@@ -135,52 +85,3 @@ async function write_cards(){
 }
 
 write_cards();
-
-// audio input sync
-if(audio){
-audio.addEventListener("loadedmetadata", () => {
-
-    max_time.innerText = calculate_time(audio.duration);
-    setSliderMax();
-
-});
-}
-function calculate_time(sec){
-    let minut = Math.floor(sec/60);
-    let second = Math.floor(sec%60);
-    let returnedSecs = second < 10 ? `0${second}` : `${second}`
-    return `${minut}:${returnedSecs}`
-}
-function setSliderMax(){
-    slider.max = Math.floor(audio.duration);
-}
-
-if(slider){
-    slider.addEventListener('input', () => {
-        timer.innerText = calculate_time(slider.value);
-        
-        if(!audio.paused){
-            cancelAnimationFrame(rAF);
-        }
-    });
-    
-
-    slider.addEventListener('change', () => {
-        audio.currentTime = slider.value;
-        if(!audio.paused){
-            requestAnimationFrame(whilePlaying)
-        }
-    });
-
-    slider.addEventListener('timeupdate',() => {
-        slider.value = Math.floor(audio.currentTime);
-    });
-}
-let rAF = null;
-const whilePlaying = () => {
-    slider.value = Math.floor(audio.currentTime);
-    timer.innerText = calculate_time(slider.value);
-    timer.style.setProperty('--seek-before-width', `${slider.value/slider.max*100}%`);
-    rAF = requestAnimationFrame(whilePlaying);
-}
-
