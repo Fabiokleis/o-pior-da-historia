@@ -5,5 +5,7 @@ Aplicação web de streaming do pequeno podcast do meu irmão...
 
 # Tecnologias utilizadas
 
-* Firebase e seus serviços
-* Javascript e tudo da web
+* Firebase-firestore
+* Firebase-storage
+* Firebase-hosting
+* Javascript, html css
